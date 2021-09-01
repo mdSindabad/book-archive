@@ -11,11 +11,28 @@
 <body>
     <main>
         <!-- search input section start -->
-        <section>
-            
-        </section>
+        <section class="container my-5 w-50">
+            <div class="my-3 text-center">
+                <h1>Book Archive</h1>
+            </div>
+            <div class="input-group mb-3">
+                <input id="search-input" type="text" class="form-control" placeholder="book name">
+                <button id="search-btn" class="btn btn-success" type="button" id="button-addon2">Search</button>
+              </div>
+            </section>
         <!-- search results section start -->
-        <section></section>
+        <section class="container">
+            <!-- show number of results found -->
+            <h6 id="num-of-results"></h6>
+            <hr>
+            <!-- spinner -->
+            <div  class="d-flex justify-content-center">
+                <div id="spinner" class="d-none col-12 spinner-border text-danger" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+            </div>
+            <div class="row g-2" id="search-results"></div>
+        </section>
     </main>
 
     <!-- bootstrap js cdn -->

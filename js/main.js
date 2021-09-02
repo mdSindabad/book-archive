@@ -15,17 +15,17 @@ const generateHtml = book => {
     const card = document.createElement('div');
     // card.classList.add('card');
     card.classList.add('col-12');
-    card.classList.add('col-md-3');
+    card.classList.add('col-md-4');
     card.innerHTML =`
         <div class="card">
-            <div class="w-100">
+            <div class="image-container">
                 <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg" class="card-img-top img-fluid" alt="${book.title}">
             </div>
             <div class="card-body">
-                <h5 class="card-title">${book.title}</h5>
-                <p class="card-text">by <i>${book.author_name[0]}</i></p>
-                <p class="card-text">publisher: <i>${book.publisher[0]}</i></p>
-                <p class="card-text">First published on: <i>${book.publish_year && book.publish_year[0]}</i></p>
+                <h4 class="card-title">${book.title}</h4>
+                <p class="card-text">by <b>${book.author_name ? book.author_name[0] : ''}</b></p>
+                <p class="card-text">Publisher: <b>${book.publisher ? book.publisher[0] : ''}</b></p>
+                <p class="card-text">First published on: <b>${book.publish_year ? book.publish_year[0] : ''}</b></p>
             </div>
         </div>`;
     return card;
@@ -70,7 +70,7 @@ const searchBook = async (event) => {
     // show spinner
     spinner.classList.remove('d-none');
     // call for data
-    const url = `http://openlibrary.org/search.json?q=${providedBookName}`;
+    const url = `https://openlibrary.org/search.json?q=${providedBookName}`;
     try {
         const results = await fetch(url);
         const data = await results.json();

@@ -17,7 +17,7 @@ const generateHtml = book => {
     card.classList.add('col-12');
     card.classList.add('col-md-4');
     card.innerHTML =`
-        <div class="card">
+        <div class="card book-item">
             <div class="image-container">
                 <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg" class="card-img-top img-fluid" alt="${book.title}">
             </div>

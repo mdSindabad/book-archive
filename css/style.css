@@ -1,4 +1,7 @@
+.book-item {
+    height: 500px;
+}
 .image-container {
-    height: 200px;
+    height: 300px;
     overflow: hidden;
 }
